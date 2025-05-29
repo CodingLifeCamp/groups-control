@@ -1,0 +1,32 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.crumb a {
+  color: #fff;
+  text-decoration: underline;
+  text-transform: capitalize;
+  transition: color 0.2s ease;
+}
+
+.crumb a:hover {
+  color: #1e90ff;
+}
+
+.crumb::after {
+  content: "/";
+  margin-left: 8px;
+  color: #555;
+}
+
+.crumb:last-child::after {
+  content: "";
+  margin: 0;
+}

@@ -1,0 +1,98 @@
+/* Header.module.css */
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.header a {
+  text-decoration: none;
+  color: #00bfff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+  transition: color 0.3s ease;
+}
+
+.header a:hover,
+.header a:focus {
+  color: #ffffff;
+}
+
+/* Search bar */
+.search {
+  display: flex;
+  align-items: center;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  width: 300px;
+  max-width: 50%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search:hover,
+.search:focus-within {
+  border-color: #00bfff;
+  box-shadow: 0 0 5px #00bfff44;
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.search input:focus {
+  color: #fff;
+}
+
+.icon {
+  color: #ccc;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover,
+.icon:focus {
+  color: #00bfff;
+}
+
+/* Timetable & User icons */
+.timetable,
+.user {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.timetableIcon,
+.userIcon {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.timetableIcon:hover,
+.userIcon:hover,
+.timetableIcon:focus,
+.userIcon:focus {
+  color: #00bfff;
+  transform: scale(1.1);
+}

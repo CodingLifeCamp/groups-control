@@ -1,0 +1,26 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal > button {
+  background: none;
+  border: none;
+  font-size: 48px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.modal > button:hover svg {
+  fill: red;
+}
