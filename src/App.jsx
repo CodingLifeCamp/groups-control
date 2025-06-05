@@ -63,7 +63,7 @@ const App = () => {
                   element: <Specialities />,
                 },
                 {
-                  path: ":id",
+                  path: ":name",
                   element: <ThemesLayout />,
                   children: [
                     {

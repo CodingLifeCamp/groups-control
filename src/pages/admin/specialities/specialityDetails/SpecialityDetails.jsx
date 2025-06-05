@@ -1,6 +1,5 @@
 import styles from "./SpecialityDetails.module.css";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import { FaXmark } from "react-icons/fa6";
 import Modal from "../../../../components/modal/Modal";
 import Levels from "../../levels/Levels";
@@ -9,14 +8,12 @@ import LevelForm from "../../levels/levelForm/LevelForm";
 
 const SpecialityDetails = () => {
   const [showModal, setShowModal] = useState(false);
-  const { id } = useParams();
-  console.log(id);
 
   return (
     <>
       {showModal && (
         <Modal>
-          <LevelForm />
+          <LevelForm setShowModal={setShowModal} />
           <button onClick={() => setShowModal(false)}>
             <FaXmark />
           </button>

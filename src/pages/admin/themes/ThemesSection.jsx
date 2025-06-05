@@ -1,6 +1,5 @@
 import styles from "./ThemesSection.module.css";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import { FaXmark } from "react-icons/fa6";
 import Modal from "../../../components/modal/Modal";
 import Themes from "./Themes";
@@ -9,14 +8,12 @@ import ThemeForm from "./themeForm/ThemeForm";
 
 const ThemesSection = () => {
   const [showModal, setShowModal] = useState(false);
-  const { id } = useParams();
-  console.log(id);
 
   return (
     <>
       {showModal && (
         <Modal>
-          <ThemeForm />
+          <ThemeForm setShowModal={setShowModal} />
           <button onClick={() => setShowModal(false)}>
             <FaXmark />
           </button>

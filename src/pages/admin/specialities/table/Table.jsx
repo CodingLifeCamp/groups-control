@@ -1,8 +1,7 @@
 import Speciality from "./Speciality";
 import styles from "./Table.module.css";
 
-const Table = () => {
-  const specialities = [1, 2, 3, 4, 5, 6];
+const Table = ({ specialities }) => {
   return (
     <table className={styles.table}>
       <thead className={styles.thead}>
@@ -26,7 +25,9 @@ const Table = () => {
       </thead>
       <tbody className={styles.tbody}>
         {specialities &&
-          specialities.map((speciality, i) => <Speciality i={i} key={i} />)}
+          specialities.map((speciality, i) => (
+            <Speciality i={i} key={i} speciality={speciality} />
+          ))}
       </tbody>
     </table>
   );
