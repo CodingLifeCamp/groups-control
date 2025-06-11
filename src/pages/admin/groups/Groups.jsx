@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Groups.module.css";
 import Table from "./table/Table";
 import FormGroup from "./formGroup/FormGroup";
 import Modal from "../../../components/modal/Modal";
 import { FaXmark } from "react-icons/fa6";
 import BreadCrumps from "../../../components/breadCrumps/BreadCrumps";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchGroups } from "../../../redux/slices/groups/groupsSlice";
 
 const Groups = () => {
   const [showModal, setShowModal] = useState(false);
+  const { groups } = useSelector((state) => state.groups);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGroups());
+  }, [dispatch]);
+
+  console.log(groups);
+
   return (
     <>
       {showModal && (

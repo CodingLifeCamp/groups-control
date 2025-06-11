@@ -1,8 +1,7 @@
 import Teacher from "./Teacher";
 import styles from "./Table.module.css";
 
-const Table = () => {
-  const teachers = [1, 2, 3, 4, 5, 6];
+const Table = ({ teachers }) => {
   return (
     <table className={styles.table}>
       <thead className={styles.thead}>
@@ -31,7 +30,10 @@ const Table = () => {
         </tr>
       </thead>
       <tbody className={styles.tbody}>
-        {teachers && teachers.map((teacher, i) => <Teacher i={i} key={i} />)}
+        {teachers &&
+          teachers.map((teacher, i) => (
+            <Teacher teacher={teacher} i={i} key={i} />
+          ))}
       </tbody>
     </table>
   );

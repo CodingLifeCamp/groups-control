@@ -1,26 +1,27 @@
+import { useEffect } from "react";
 import "./Home.css";
 import styles from "./Home.module.css";
+import { fetchStatistics } from "../../../redux/slices/statistics/statisticsSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { statistics } = useSelector((state) => state.statistics);
+
+  useEffect(() => {
+    dispatch(fetchStatistics());
+  }, [dispatch]);
+
   return (
     <div className={styles.home}>
       <div className={styles.container}>
-        <div className={styles.card}>
-          <h3>13</h3>
-          <p>Teachers</p>
-        </div>
-        <div className={styles.card}>
-          <h3>50</h3>
-          <p>Groups</p>
-        </div>
-        <div className={styles.card}>
-          <h3>345</h3>
-          <p>Students</p>
-        </div>
-        <div className={styles.card}>
-          <h3>5</h3>
-          <p>Specialities</p>
-        </div>
+        {statistics &&
+          statistics.map((card) => (
+            <div key={card.name} className={styles.card}>
+              <h3>{card.total}</h3>
+              <p>{card.name}</p>
+            </div>
+          ))}
       </div>
     </div>
   );
